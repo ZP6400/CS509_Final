@@ -1,8 +1,8 @@
 var searchData=
 [
   ['getaccount_0',['getAccount',['../classmodel_1_1user_1_1_customer.html#afa48ec2e030057927e37bb3cab075b8b',1,'model.user.Customer.getAccount()'],['../classrepository_1_1_database_manager.html#a2fdf0e25eb841639e88b54f7c1f89820',1,'repository.DatabaseManager.getAccount()']]],
-  ['getaccount_5fnumber_1',['getaccount_number',['../classmodel_1_1account_1_1_account.html#aeeef1083a299c21e40d2ea3aed4a52bf',1,'model.account.Account.getaccount_number()'],['../classmodel_1_1account_1_1_creation_result.html#afd4e99ebfdd4c520ba028956efc3db00',1,'model.account.CreationResult.getaccount_number()'],['../classmodel_1_1account_1_1_deletion_result.html#ac199c07fbc8e7a71bd58a0cba4983f1d',1,'model.account.DeletionResult.getaccount_number()']]],
-  ['getaccountifexists_2',['getAccountIfExists',['../classservice_1_1_admin_service.html#a94ef09af881187955c323de9824cd649',1,'service::AdminService']]],
+  ['getaccountifexists_1',['getAccountIfExists',['../classservice_1_1_admin_service.html#a94ef09af881187955c323de9824cd649',1,'service::AdminService']]],
+  ['getaccountnumber_2',['getAccountNumber',['../classmodel_1_1account_1_1_account.html#ad4ae21b1cbb75d25b1253467b105ade2',1,'model.account.Account.getAccountNumber()'],['../classmodel_1_1account_1_1_creation_result.html#a4a5db59563d67d1775fba9b59b116a02',1,'model.account.CreationResult.getAccountNumber()'],['../classmodel_1_1account_1_1_deletion_result.html#a77f4d0efa539d0bd683e154003945272',1,'model.account.DeletionResult.getAccountNumber()']]],
   ['getbalance_3',['getBalance',['../classmodel_1_1account_1_1_account.html#ad4da54101b6b638ccbda86cadc127708',1,'model::account::Account']]],
   ['getconnection_4',['getConnection',['../classrepository_1_1_database_manager.html#aa0f1f0a99d74bbdd1f5a7bc0ee525920',1,'repository::DatabaseManager']]],
   ['getholdername_5',['getHolderName',['../classmodel_1_1account_1_1_account.html#a241a924ffded670de57d6261110d9fde',1,'model::account::Account']]],

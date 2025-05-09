@@ -37,7 +37,7 @@ class CustomerServiceTest {
         //When the following mocks call the following methods, the following should be returned
         when(customer_mock.getAccount()).thenReturn(account_mock);
         when(account_mock.withdraw(100)).thenReturn(true);
-        when(account_mock.getaccount_number()).thenReturn(1);
+        when(account_mock.getAccountNumber()).thenReturn(1);
         when(account_mock.getBalance()).thenReturn(900);
 
         WithdrawalResult result = customer_service.withdrawCash(customer_mock, 100);
@@ -45,7 +45,7 @@ class CustomerServiceTest {
         //When withdrawCash() is called and runs successfully, a WithdrawalResult object should be returned with
         //a SUCCESS status; account numbers should also match, and updateAccountBalance() should have been called once
         assertEquals(WithdrawalResult.Status.SUCCESS, result.getStatus());
-        assertEquals(1, result.getAccount().getaccount_number());
+        assertEquals(1, result.getAccount().getAccountNumber());
         verify(db_manager_mock, times(1)).updateAccountBalance(1, 900);
     }
 
@@ -55,7 +55,7 @@ class CustomerServiceTest {
         //When the following mocks call the following methods, the following should be returned
         when(customer_mock.getAccount()).thenReturn(account_mock);
         when(account_mock.withdraw(1000)).thenReturn(false);
-        when(account_mock.getaccount_number()).thenReturn(2);
+        when(account_mock.getAccountNumber()).thenReturn(2);
         when(account_mock.getBalance()).thenReturn(900);
 
         WithdrawalResult result = customer_service.withdrawCash(customer_mock, 1000);
@@ -63,7 +63,7 @@ class CustomerServiceTest {
         //When withdrawCash() is called and is unable to make the withdrawal, a WithdrawalResult object should be returned with
         //an INSUFFICIENT_FUNDS status; account numbers should also match
         assertEquals(WithdrawalResult.Status.INSUFFICIENT_FUNDS, result.getStatus());
-        assertEquals(2, result.getAccount().getaccount_number());
+        assertEquals(2, result.getAccount().getAccountNumber());
     }
 
     @Test
@@ -86,7 +86,7 @@ class CustomerServiceTest {
 
         //When the following mocks call the following methods, the following should be returned
         when(customer_mock.getAccount()).thenReturn(account_mock);
-        when(account_mock.getaccount_number()).thenReturn(17);
+        when(account_mock.getAccountNumber()).thenReturn(17);
         when(account_mock.getBalance()).thenReturn(1100);
 
         DepositResult result = customer_service.depositCash(customer_mock, 100);
@@ -94,7 +94,7 @@ class CustomerServiceTest {
         //When depositCash() is called and runs successfully, a DepositResult object should be returned with
         //a SUCCESS status; account numbers should also match, and updateAccountBalance() should have been called once
         assertEquals(DepositResult.Status.SUCCESS, result.getStatus());
-        assertEquals(17, result.getAccount().getaccount_number());
+        assertEquals(17, result.getAccount().getAccountNumber());
         verify(db_manager_mock, times(1)).updateAccountBalance(17, 1100);
     }
 

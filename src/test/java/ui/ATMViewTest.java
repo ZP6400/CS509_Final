@@ -1,5 +1,7 @@
 package ui;
 
+import model.account.Account;
+import model.user.Customer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -360,5 +362,83 @@ class ATMViewTest {
         assertEquals(200, deposit_amount);
         assertTrue(output_stream.toString().contains("Invalid input. Please enter a positive integer."));
         assertTrue(output_stream.toString().contains("Enter the cash amount to deposit: "));
+    }
+
+
+    @Test
+    void test_promptAccountNumberForDeletion_when_given_invalid_input_then_negative_value_then_valid_value_should_notify_user_twice_and_then_accept_third_input() {
+
+        //Invalid choice is inputted first, then a negative value, then a valid value
+        ByteArrayInputStream input = new ByteArrayInputStream("invalid\n-1\n17\n".getBytes());
+        Scanner scanner = new Scanner(input);
+
+        ATMView atm_view = new ATMView(scanner);
+        ByteArrayOutputStream output_stream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output_stream));
+        int account_selection = atm_view.promptAccountNumberForDeletion();
+
+        //When promptAccountNumberForDeletion() is run and the user input is fed, the following assertions should be true
+        assertEquals(17, account_selection);
+        assertTrue(output_stream.toString().contains("Invalid input. Please enter a valid integer."));
+        assertTrue(output_stream.toString().contains("Account number must be greater than 0"));
+    }
+
+    @Test
+    void test_confirmDeletion_when_given_invalid_input_then_valid_value_should_notify_user_and_then_accept_second_input() {
+
+        //Invalid choice is inputted first, then a valid value
+        ByteArrayInputStream input = new ByteArrayInputStream("invalid\n2\n".getBytes());
+        Scanner scanner = new Scanner(input);
+
+        ATMView atm_view = new ATMView(scanner);
+        ByteArrayOutputStream output_stream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output_stream));
+        int confirmation = atm_view.confirmDeletion("John Doe");
+
+        //When confirmDeletion() is run and the user input is fed, the following assertions should be true
+        assertEquals(2, confirmation);
+        String output = output_stream.toString();
+        assertTrue(output.contains("You wish to delete the account held by John Doe. If this is correct, " +
+                "please re-enter the account number: "));
+        assertTrue(output.contains("Invalid input. Please enter an integer."));
+    }
+
+    @Test
+    void test_promptAccountNumber_when_given_invalid_input_then_negative_value_then_valid_value_should_notify_user_twice_and_then_accept_third_input() {
+
+        //Invalid choice is inputted first, then a negative value, then a valid value
+        ByteArrayInputStream input = new ByteArrayInputStream("invalid\n-2\n18\n".getBytes());
+        Scanner scanner = new Scanner(input);
+
+        ATMView atm_view = new ATMView(scanner);
+        ByteArrayOutputStream output_stream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output_stream));
+        int account_selection = atm_view.promptAccountNumber();
+
+        //When promptAccountNumber() is run and the user input is fed, the following assertions should be true
+        assertEquals(18, account_selection);
+        assertTrue(output_stream.toString().contains("Invalid input. Please enter a valid integer."));
+        assertTrue(output_stream.toString().contains("Account number must be greater than 0"));
+    }
+
+    @Test
+    void testShowAccountInfo() {
+
+        Account account_mock = new Account(3, "Jane Doe", 1500, "Active");
+        Customer user_mock = new Customer("JD5400", "87654", account_mock);
+
+        ATMView atm_view = new ATMView(new Scanner(System.in));
+        ByteArrayOutputStream output_stream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output_stream));
+
+        atm_view.showAccountInfo(account_mock, user_mock);
+
+        String output = output_stream.toString();
+        assertTrue(output.contains("Account #3"));
+        assertTrue(output.contains("Holder: Jane Doe"));
+        assertTrue(output.contains("Balance: $1500"));
+        assertTrue(output.contains("Status: Active"));
+        assertTrue(output.contains("Login: JD5400"));
+        assertTrue(output.contains("Pin Code: 87654"));
     }
 }

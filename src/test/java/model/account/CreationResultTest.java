@@ -15,7 +15,7 @@ public class CreationResultTest {
         CreationResult result = new CreationResult(status, account_number);
 
         assertEquals(status, result.getStatus());
-        assertEquals(account_number, result.getaccount_number());
+        assertEquals(account_number, result.getAccountNumber());
     }
 }
 

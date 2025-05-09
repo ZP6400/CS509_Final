@@ -70,7 +70,7 @@ public class DatabaseManagerTest {
         assertEquals("JD6100", customer.getLogin());
         assertEquals("12345", customer.getPin());
         Account account = customer.getAccount();
-        assertEquals(1, account.getaccount_number());
+        assertEquals(1, account.getAccountNumber());
         assertEquals("John Doe", account.getHolderName());
         assertEquals(3000, account.getBalance());
         assertEquals("Active", account.getStatus());
@@ -159,7 +159,7 @@ public class DatabaseManagerTest {
         assertEquals("JD6000", customer.getLogin());
         assertEquals("12345", customer.getPin());
         Account account = customer.getAccount();
-        assertEquals(account_num, account.getaccount_number());
+        assertEquals(account_num, account.getAccountNumber());
         assertEquals("John Doe", account.getHolderName());
         assertEquals(4000, account.getBalance());
         assertEquals("Active", account.getStatus());
@@ -248,7 +248,7 @@ public class DatabaseManagerTest {
 
         //When getAccount() is run, it should return the account with the same information that matches
         //the account number that was provided
-        assertEquals(account_num, account.getaccount_number());
+        assertEquals(account_num, account.getAccountNumber());
         assertEquals("Jane Doe", account.getHolderName());
         assertEquals(9000, account.getBalance());
         assertEquals("Disabled", account.getStatus());

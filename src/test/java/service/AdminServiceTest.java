@@ -41,7 +41,7 @@ class AdminServiceTest {
         //When getAccountIfExists() is called when account exists, the account returned should not be null and should
         //also have an account number that matches account_num
         assertNotNull(account);
-        assertEquals(account_num, account.getaccount_number());
+        assertEquals(account_num, account.getAccountNumber());
     }
 
 
@@ -62,7 +62,7 @@ class AdminServiceTest {
         //When createAccount() is called and runs successfully, a CreationResult object should be returned with
         //a SUCCESS status; account numbers should also match, and createNewAccount() should have been called once
         assertEquals(CreationResult.Status.SUCCESS, result.getStatus());
-        assertEquals(1, result.getaccount_number());
+        assertEquals(1, result.getAccountNumber());
         verify(db_manager_mock, times(1)).createNewAccount(login, pin, holder, starting_balance, "Active");
     }
 
@@ -83,7 +83,7 @@ class AdminServiceTest {
         //When createAccount() is called and an account already exists, a CreationResult object should be returned with
         //a DUPLICATE_ACCOUNT status; account numbers of -1 should also match, and createNewAccount() should have been called once
         assertEquals(CreationResult.Status.DUPLICATE_ACCOUNT, result.getStatus());
-        assertEquals(-1, result.getaccount_number());
+        assertEquals(-1, result.getAccountNumber());
         verify(db_manager_mock, times(1)).createNewAccount(login, pin, holder, starting_balance, "Disabled");
     }
 
@@ -104,7 +104,7 @@ class AdminServiceTest {
         //When createAccount() is called and account creation fails, a CreationResult object should be returned with
         //an ERROR status; account numbers of -1 should also match, and createNewAccount() should have been called once
         assertEquals(CreationResult.Status.ERROR, result.getStatus());
-        assertEquals(-1, result.getaccount_number());
+        assertEquals(-1, result.getAccountNumber());
         verify(db_manager_mock, times(1)).createNewAccount(login, pin, holder, starting_balance, "Disabled");
     }
 
@@ -123,7 +123,7 @@ class AdminServiceTest {
         //When deleteAccount() is called and runs successfully, a DeletionResult object should be returned with
         //a SUCCESS status; account numbers should also match and deleteAccount() should have been called once
         assertEquals(DeletionResult.Status.SUCCESS, result.getStatus());
-        assertEquals(account_num, result.getaccount_number());
+        assertEquals(account_num, result.getAccountNumber());
         verify(db_manager_mock, times(1)).deleteAccount(account_num);
     }
 
@@ -138,7 +138,7 @@ class AdminServiceTest {
         //When deleteAccount() is called but the account numbers provided don't match, a DeletionResult object should be returned with
         //a CONFIRMATION_FAILURE status; account numbers should also match and deleteAccount() should have been called zero times
         assertEquals(DeletionResult.Status.CONFIRMATION_FAILURE, result.getStatus());
-        assertEquals(account_num, result.getaccount_number());
+        assertEquals(account_num, result.getAccountNumber());
         verify(db_manager_mock, times(0)).deleteAccount(account_num);
     }
 

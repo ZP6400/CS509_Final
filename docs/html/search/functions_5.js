@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['promptaccount_5fnumber_0',['promptaccount_number',['../classui_1_1_a_t_m_view.html#a6d4139520b918bcb2754f5bb7ea00553',1,'ui::ATMView']]],
-  ['promptaccount_5fnumberfordeletion_1',['promptaccount_numberForDeletion',['../classui_1_1_a_t_m_view.html#a15df36322c3d1213f565c20cbd307eb9',1,'ui::ATMView']]],
+  ['promptaccountnumber_0',['promptAccountNumber',['../classui_1_1_a_t_m_view.html#af3d94002cfeeceb4e5ccc1e616761cd7',1,'ui::ATMView']]],
+  ['promptaccountnumberfordeletion_1',['promptAccountNumberForDeletion',['../classui_1_1_a_t_m_view.html#a1d4a0c37c54c3bc7065caa96057b3d7a',1,'ui::ATMView']]],
   ['promptaccountstatus_2',['promptAccountStatus',['../classui_1_1_a_t_m_view.html#a8438206d8a73a0b1d8100a1bf5567b5a',1,'ui::ATMView']]],
   ['promptdeposit_3',['promptDeposit',['../classui_1_1_a_t_m_view.html#ae82157fb50a3983875c15c1b7475a392',1,'ui::ATMView']]],
   ['promptholdername_4',['promptHolderName',['../classui_1_1_a_t_m_view.html#aefb56a71b23a87b4107754a80a677caa',1,'ui::ATMView']]],

@@ -1,6 +1,5 @@
 package controller;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import model.account.Account;
 import model.account.AccountInfo;
 import model.account.CreationResult;
@@ -28,11 +27,7 @@ public class ATMController {
     private final AdminService admin_service;
     private final ATMView view;
 
-    @SuppressFBWarnings(
 
-            value = {"EI_EXPOSE_REP2"},
-            justification = "Controller receives shared service instances by design"
-    )
     public ATMController(DatabaseManager db_manager, CustomerService customer_service,
                          AdminService admin_service, ATMView view) {
 
@@ -214,7 +209,7 @@ public class ATMController {
                 //The account information is acquired and printed to the terminal via the interface
                 Account account = result.account();
                 view.displayMessage("Cash Successfully Withdrawn.");
-                view.displayMessage("Account #" + account.getaccount_number());
+                view.displayMessage("Account #" + account.getAccountNumber());
                 view.displayMessage("Date: " + formatted_date);
                 view.displayMessage("Withdrawn: $" + result.amount());
                 view.displayMessage("Balance: $" + account.getBalance());
@@ -250,7 +245,7 @@ public class ATMController {
                 //The account information is acquired and printed to the terminal via the interface
                 Account account = result.account();
                 view.displayMessage("Cash Successfully Deposited.");
-                view.displayMessage("Account #" + account.getaccount_number());
+                view.displayMessage("Account #" + account.getAccountNumber());
                 view.displayMessage("Date: " + formatted_date);
                 view.displayMessage("Deposited: $" + result.amount());
                 view.displayMessage("Balance: $" + account.getBalance());
@@ -272,7 +267,7 @@ public class ATMController {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
             String formatted_date = current_date.format(formatter);
 
-            view.displayMessage("Account #" + account.getaccount_number());
+            view.displayMessage("Account #" + account.getAccountNumber());
             view.displayMessage("Date: " + formatted_date);
             view.displayMessage("Balance: $" + account.getBalance());
         }
@@ -314,9 +309,9 @@ public class ATMController {
             case SUCCESS:
 
                 //The account is successfully made. The account number is acquired via CreationResult's
-                //getaccount_number()
+                //getAccountNumber()
                 view.displayMessage("Account Successfully Created – the account number assigned is: "
-                        + result.getaccount_number());
+                        + result.getAccountNumber());
                 break;
         }
     }
@@ -327,7 +322,7 @@ public class ATMController {
         int account_num = -1;
         while (account_num <= 0) {
 
-            account_num = view.promptaccount_numberForDeletion();
+            account_num = view.promptAccountNumberForDeletion();
             Account account = admin_service.getAccountIfExists(account_num);
 
             //If the account is null, then the number entered is not a valid number
@@ -344,7 +339,7 @@ public class ATMController {
                 assert account != null;
                 int confirmation = view.confirmDeletion(account.getHolderName());
 
-                DeletionResult result = admin_service.deleteAccount(account.getaccount_number(), confirmation);
+                DeletionResult result = admin_service.deleteAccount(account.getAccountNumber(), confirmation);
 
                 //There are two possible results from trying to delete an account
                 switch (result.getStatus()) {
@@ -372,7 +367,7 @@ public class ATMController {
         int account_num = -1;
         while (account_num <= 0) {
 
-            account_num = view.promptaccount_number();
+            account_num = view.promptAccountNumber();
             Account account = admin_service.getAccountIfExists(account_num);
 
             //If the account is null, then the number entered is not a valid number
@@ -465,7 +460,7 @@ public class ATMController {
         int account_num = -1;
         while (account_num <= 0) {
 
-            account_num = view.promptaccount_number();
+            account_num = view.promptAccountNumber();
             Account account = admin_service.getAccountIfExists(account_num);
 
             //If the account is null, then the number entered is not a valid number

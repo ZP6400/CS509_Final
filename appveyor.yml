@@ -6,6 +6,9 @@ test: true
 build_script:
   - ps .\build.ps1
 
+after_build:
+  - ps Invoke-WebRequest -Uri https://codecov.io/bash -OutFile codecov.sh; bash codecov.sh -t your-codecov-upload-token
+
 deploy:
   provider: GitHub
   github_repo: ZP6400/CS509_Final

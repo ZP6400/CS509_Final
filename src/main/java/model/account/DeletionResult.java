@@ -22,7 +22,7 @@ public class DeletionResult {
         return status;
     }
 
-    public int getaccount_number() {
+    public int getAccountNumber() {
 
         return account_num;
     }

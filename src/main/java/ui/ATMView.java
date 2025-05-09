@@ -231,7 +231,7 @@ public class ATMView {
     }
 
 
-    public int promptaccount_numberForDeletion() {
+    public int promptAccountNumberForDeletion() {
 
         while (true) {
 
@@ -277,7 +277,7 @@ public class ATMView {
         }
     }
 
-    public int promptaccount_number() {
+    public int promptAccountNumber() {
 
         while (true) {
 
@@ -306,7 +306,7 @@ public class ATMView {
 
     public void showAccountInfo(Account account, User user) {
 
-        System.out.println("Account #" + account.getaccount_number());
+        System.out.println("Account #" + account.getAccountNumber());
         System.out.println("Holder: " + account.getHolderName());
         System.out.println("Balance: $" + account.getBalance());
         System.out.println("Status: " + account.getStatus());

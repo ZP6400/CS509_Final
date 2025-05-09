@@ -557,7 +557,7 @@ public class ATMControllerTest {
 
         //When view_mock prompts for an account number, account_num is provided. When admin_service_mock prompts for an account,
         //account_mock is returned
-        when(view_mock.promptaccount_numberForDeletion()).thenReturn(account_num);
+        when(view_mock.promptAccountNumberForDeletion()).thenReturn(account_num);
         when(admin_service_mock.getAccountIfExists(account_num)).thenReturn(account_mock);
 
         when(view_mock.confirmDeletion("Jane Doe")).thenReturn(account_num);
@@ -579,9 +579,9 @@ public class ATMControllerTest {
         int account_num = 17;
         int nonexistent_account_num = 42;
 
-        //In the first instance promptaccount_numberForDeletion() is called, the nonexistent account number is returned first.
+        //In the first instance promptAccountNumberForDeletion() is called, the nonexistent account number is returned first.
         //Then, the actual account number is provided
-        when(view_mock.promptaccount_numberForDeletion()).thenReturn(nonexistent_account_num, account_num);
+        when(view_mock.promptAccountNumberForDeletion()).thenReturn(nonexistent_account_num, account_num);
 
         //First getAccountIfExists() call returns null; second call returns account_mock
         when(admin_service_mock.getAccountIfExists(nonexistent_account_num)).thenReturn(null);
@@ -612,7 +612,7 @@ public class ATMControllerTest {
 
         //When view_mock prompts for an account number, account_num is provided. When admin_service_mock prompts for an account,
         //account_mock is returned
-        when(view_mock.promptaccount_numberForDeletion()).thenReturn(account_num);
+        when(view_mock.promptAccountNumberForDeletion()).thenReturn(account_num);
         when(admin_service_mock.getAccountIfExists(account_num)).thenReturn(mockAccount);
 
         //When confirmDeletion() is called, the incorrect number is provided
@@ -638,7 +638,7 @@ public class ATMControllerTest {
 
         //When the interface prompts the user for an account number, account_num is provided. When the admin service prompts
         //for an account, account_mock is provided
-        when(view_mock.promptaccount_number()).thenReturn(account_num);
+        when(view_mock.promptAccountNumber()).thenReturn(account_num);
         when(admin_service_mock.getAccountIfExists(account_num)).thenReturn(account_mock);
 
         //When the update menu prompts for a selection: 1 is chosen, then 2, then 3, then 4, and finally 5
@@ -670,9 +670,9 @@ public class ATMControllerTest {
         int account_num = 17;
         int nonexistent_account_num = 42;
 
-        //In the first instance promptaccount_number() is called, the nonexistent account number is returned first.
+        //In the first instance promptAccountNumber() is called, the nonexistent account number is returned first.
         //Then, the actual account number is provided
-        when(view_mock.promptaccount_number()).thenReturn(nonexistent_account_num, account_num);
+        when(view_mock.promptAccountNumber()).thenReturn(nonexistent_account_num, account_num);
 
         //First getAccountIfExists() call returns null; second call returns an actual account
         when(admin_service_mock.getAccountIfExists(nonexistent_account_num)).thenReturn(null);
@@ -700,7 +700,7 @@ public class ATMControllerTest {
 
         //When the interface prompts the user for an account number, account_num is provided. When the admin service prompts
         //for an account, account_mock is provided
-        when(view_mock.promptaccount_number()).thenReturn(account_num);
+        when(view_mock.promptAccountNumber()).thenReturn(account_num);
         when(admin_service_mock.getAccountIfExists(account_num)).thenReturn(account_mock);
 
         when(view_mock.promptMenuChoice()).thenReturn(5);
@@ -723,7 +723,7 @@ public class ATMControllerTest {
 
         //When the interface prompts the user for an account number, account_num is provided. When the admin service prompts
         //for an account, account_mock is provided
-        when(view_mock.promptaccount_number()).thenReturn(account_num);
+        when(view_mock.promptAccountNumber()).thenReturn(account_num);
         when(admin_service_mock.getAccountIfExists(account_num)).thenReturn(account_mock);
 
         //When accessing the menu, an invalid integer is entered first, then the exit integer
@@ -751,7 +751,7 @@ public class ATMControllerTest {
         //A new AccountInfo object is initialized with the information provided by account_mock and user_mock
         AccountInfo info = new AccountInfo(account_mock, user_mock);
 
-        when(view_mock.promptaccount_number()).thenReturn(account_num);
+        when(view_mock.promptAccountNumber()).thenReturn(account_num);
         when(admin_service_mock.getAccountIfExists(account_num)).thenReturn(account_mock);
         when(admin_service_mock.searchAccount(account_num)).thenReturn(info);
 
@@ -775,7 +775,7 @@ public class ATMControllerTest {
 
         //When view_mock prompts the user with an account number, the nonexistent number is provided first, then the
         //actual account number
-        when(view_mock.promptaccount_number())
+        when(view_mock.promptAccountNumber())
                 .thenReturn(nonexistent_account_num)
                 .thenReturn(account_num);
         when(admin_service_mock.getAccountIfExists(nonexistent_account_num)).thenReturn(null);

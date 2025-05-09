@@ -13,7 +13,7 @@ public class AccountTest {
 
         Account account = new Account(1, "John Doe", 50000, "Active");
 
-        assertEquals(1, account.getaccount_number());
+        assertEquals(1, account.getAccountNumber());
         assertEquals("John Doe", account.getHolderName());
         assertEquals(50000, account.getBalance());
         assertEquals("Active", account.getStatus());

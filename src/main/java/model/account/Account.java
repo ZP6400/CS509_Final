@@ -19,7 +19,7 @@ public class Account {
 
     //The following are getters for each attribute in the class. This is unfortunately necessary for
     //one operation, but luckily no getters exist for the login and pin_code fields of the User class
-    public int getaccount_number() {
+    public int getAccountNumber() {
 
         return account_number;
     }

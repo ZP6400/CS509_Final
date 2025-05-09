@@ -23,7 +23,7 @@ public class CreationResult {
         return status;
     }
 
-    public int getaccount_number() {
+    public int getAccountNumber() {
 
         return account_number;
     }

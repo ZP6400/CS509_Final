@@ -34,7 +34,7 @@ public class CustomerService {
         //If the account exists (is not null) and the amount provided can safely be withdrawn:
         if (account.withdraw(amount)) {
 
-            db_manager.updateAccountBalance(account.getaccount_number(), account.getBalance());
+            db_manager.updateAccountBalance(account.getAccountNumber(), account.getBalance());
 
             //A WithdrawalResult object with a SUCCESS status is created and returned
             return new WithdrawalResult(WithdrawalResult.Status.SUCCESS, account, amount);
@@ -58,7 +58,7 @@ public class CustomerService {
             //The deposit function is called to update the current state of the account. The updateAccountBalance
             //for db_manager is then called to ensure that the database is up to date
             account.deposit(amount);
-            db_manager.updateAccountBalance(account.getaccount_number(), account.getBalance());
+            db_manager.updateAccountBalance(account.getAccountNumber(), account.getBalance());
 
             //A WithdrawalResult object with a SUCCESS status is created and returned
             return new DepositResult(DepositResult.Status.SUCCESS, account, amount);
