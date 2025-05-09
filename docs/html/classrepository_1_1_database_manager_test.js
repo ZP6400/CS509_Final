@@ -1,0 +1,27 @@
+var classrepository_1_1_database_manager_test =
+[
+    [ "setUp", "classrepository_1_1_database_manager_test.html#a93e9f03c8b41079ebfc3219dc40a841f", null ],
+    [ "test_createNewAccount_when_duplicate_entry_should_return_negative_2", "classrepository_1_1_database_manager_test.html#aa9c65247b6df31ff28d1329ddc1f81b8", null ],
+    [ "test_createNewAccount_when_no_generated_key_should_return_negative_1", "classrepository_1_1_database_manager_test.html#aaca2714810cd6fd3753f60305b3495dd", null ],
+    [ "test_createNewAccount_when_SQLException_occurs_should_throw_DatabaseException", "classrepository_1_1_database_manager_test.html#a6b5db2260ba51c460386f5d0157685db", null ],
+    [ "test_createNewAccount_when_successful_should_return_account_number", "classrepository_1_1_database_manager_test.html#a6df3c731d2c2e7dd27f5a1fe1b1c6991", null ],
+    [ "test_deleteAccount_when_SQLException_occurs_should_throw_DatabaseException", "classrepository_1_1_database_manager_test.html#aa8aca3681b7eea7b95f7e5b7ac389567", null ],
+    [ "test_deleteAccount_when_successful_should_call_execute_update", "classrepository_1_1_database_manager_test.html#a365075beb35c3eeb9bda24ccfa5e3096", null ],
+    [ "test_getAccount_when_account_not_found_should_return_null", "classrepository_1_1_database_manager_test.html#a73bac3ef224ecfc84efd02c449b57ba5", null ],
+    [ "test_getAccount_when_SQLException_occurs_should_throw_DatabaseException", "classrepository_1_1_database_manager_test.html#ad2bc707138ae2c4fef93b21e5e06aaa6", null ],
+    [ "test_getAccount_when_successful_should_return_account", "classrepository_1_1_database_manager_test.html#abf1673fb6958f843651888ad0d804227", null ],
+    [ "test_getUser_by_account_num_when_administrator_provided_should_correctly_assign_info", "classrepository_1_1_database_manager_test.html#a13b151dbf4a2e17908c29f744ec34955", null ],
+    [ "test_getUser_by_account_num_when_customer_provided_should_correctly_assign_info", "classrepository_1_1_database_manager_test.html#a660b9f78e636153ed8d29e6e9f24dbe4", null ],
+    [ "test_getUser_by_account_num_when_no_user_found_should_return_null", "classrepository_1_1_database_manager_test.html#a0b04d062bb67a1a348adaad1a97096fd", null ],
+    [ "test_getUser_by_account_number_when_SQLException_occurs_should_throw_DatabaseException", "classrepository_1_1_database_manager_test.html#a9d63cde1fcbf0dbc0e4418e12741c27b", null ],
+    [ "test_getUser_when_administrator_provided_should_correctly_assign_info", "classrepository_1_1_database_manager_test.html#a124f783021c4811e67dc9371dd42f2e9", null ],
+    [ "test_getUser_when_customer_provided_should_correctly_assign_info", "classrepository_1_1_database_manager_test.html#aa3444936337811962d1e5d13e4994895", null ],
+    [ "test_getUser_when_no_user_found_should_return_null", "classrepository_1_1_database_manager_test.html#a9ea6f1b773e2e2b08520b5003597cb10", null ],
+    [ "test_getUser_when_SQLException_occurs_should_throw_DatabaseException", "classrepository_1_1_database_manager_test.html#a45445ce5f8012b4a587efae38a5eb39f", null ],
+    [ "test_updateAccountBalance_when_SQLException_occurs_should_throw_DatabaseException", "classrepository_1_1_database_manager_test.html#a0d69da3594e27bab29b1ada710c2b7ff", null ],
+    [ "test_updateAccountBalance_when_successful_should_execute_update", "classrepository_1_1_database_manager_test.html#a38cc7787318788c688cb02f14ee41105", null ],
+    [ "test_updateAccountInfo_when_account_does_not_exist_should_return_false", "classrepository_1_1_database_manager_test.html#a4e8b429938a91a8f82c11088780846ce", null ],
+    [ "test_updateAccountInfo_when_no_fields_are_updated_should_return_false", "classrepository_1_1_database_manager_test.html#af4224d528f3e01e6b141ad7a36c017fb", null ],
+    [ "test_updateAccountInfo_when_SQLException_occurs_should_throw_DatabaseException", "classrepository_1_1_database_manager_test.html#ac516f7b685c125920dbc77196304e733", null ],
+    [ "test_updateAccountInfo_when_successful_should_return_true", "classrepository_1_1_database_manager_test.html#a24159885236169d2d318b67d749347a6", null ]
+];

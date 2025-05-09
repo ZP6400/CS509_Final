@@ -1,0 +1,16 @@
+image: Visual Studio 2019
+
+build: true
+test: true
+
+build_script:
+  - ps .\build.ps1
+
+deploy:
+  provider: GitHub
+  github_repo: ZP6400/CS509_Final
+  branch: gh-pages
+  auth_token:
+    secure: $GITHUB_TOKEN
+  on:
+    branch: master
